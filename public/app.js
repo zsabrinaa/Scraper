@@ -12,7 +12,7 @@ $(document).ready(function () {
         // Append each of the animal's properties to the table
         var tr = $("<tr class='articleText' data-id='" + data._id + "'>").append(
           $("<td>").text(data.title),
-          $("<a href= + '" + data.link + "'>").text(data.link),
+          $("<a href='" + data.link + "'>").text(data.link),
         );
         $("#articles").append(tr);
       });
