@@ -8,10 +8,11 @@ $(document).ready(function () {
     $("#articles").empty();
     $.getJSON("/articles", function (data) {
       data.forEach(function (data) {
+        console.log(data);
         // Append each of the animal's properties to the table
         var tr = $("<tr class='articleText' data-id='" + data._id + "'>").append(
           $("<td>").text(data.title),
-          $("<td>").text(data.link),
+          $("<td><a href" + data.link).text(data.link),
         );
         $("#articles").append(tr);
       });
