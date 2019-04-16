@@ -10,8 +10,8 @@ $(document).ready(function () {
       data.forEach(function (data) {
         console.log(data);
         // Append each of the animal's properties to the table
-        var tr = $("<tr>").append(
-          $("<td class='articleText' data-id='" + data._id + ">").text(data.title),
+        var tr = $("<tr class='articleText' data-id='" + data._id + "'>").append(
+          $("<td>").text(data.title),
           $("<a href='" + data.link + "'>").text(data.link),
         );
         $("#articles").append(tr);
@@ -20,7 +20,7 @@ $(document).ready(function () {
   }
 
 
-  $(document).on("click", "td", function () {
+  $(document).on("click", "tr", function () {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
